@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendación de Módulo Solar</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 4px solid #004a99;
+        }
+
+        nav .title {
+            font-size: 28px;
+        }
+
+        nav .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-button {
+            background-color: white;
+            color: #0066cc;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #004a99;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 20px;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        /* Columna izquierda */
+        .left-column {
+            flex: 1;
+            min-width: 45%;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+
+        .left-column h2 {
+            color: #0066cc;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e6e6e6;
+            padding-bottom: 10px;
+        }
+
+        .module-item {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .module-item img {
+            width: 60px;
+            margin-right: 15px;
+        }
+
+        .module-item:hover {
+            background-color: #e8f4ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Precio y opciones */
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 20px;
+            border-top: 2px solid #e6e6e6;
+        }
+
+        .price {
+            color: #28a745;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .buy-button {
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #218838;
+        }
+
+        /* Columna derecha */
+        .right-column {
+            flex: 1;
+            min-width: 45%;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+
+        .right-column h3 {
+            color: #0066cc;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e6e6e6;
+            padding-bottom: 10px;
+        }
+
+        .usage-details {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .price-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .buy-button {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+        .sponsors-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    border-top: 2px solid #ddd;
+}
+
+.sponsors-section h3 {
+    font-size: 24px;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.sponsors-logos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.sponsors-logos img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.sponsors-logos img:hover {
+    transform: scale(1.1);
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="title">Recomendación de Módulo Solar</div>
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Inicio</a>
+            <a href="emergency_solution.html" class="nav-button">Atras</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Columna izquierda -->
+        <div class="left-column">
+            <h2>Selecciona tu Módulo Solar</h2>
+
+            <div class="module-item" onclick="toggleSelection(this)">
+                <img src="images/panel-solar.jpg" alt="Panel Solar">
+                <div>
+                    <strong>Panel Solar</strong>
+                    <p>300W - $200 por unidad</p>
+                </div>
+            </div>
+
+            <div class="module-item" onclick="toggleSelection(this)">
+                <img src="images/bateria.jpg" alt="Batería">
+                <div>
+                    <strong>Batería</strong>
+                    <p>8 kWh - $1000</p>
+                </div>
+            </div>
+
+            <div class="module-item" onclick="toggleSelection(this)">
+                <img src="images/inversor.jpg" alt="Inversor">
+                <div>
+                    <strong>Inversor</strong>
+                    <p>5 kW - $700</p>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <span>Total:</span>
+                <div class="price" id="totalPrice">$0</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="right-column">
+            <h3>Duración de Uso del Sistema</h3>
+            <div class="usage-details">
+                <p>Con el sistema seleccionado, podrás operar:</p>
+                <ul>
+                    <li>Electrodomésticos básicos por <span class="highlight">8 horas</span>.</li>
+                    <li>Aire acondicionado por <span class="highlight">4 horas</span>.</li>
+                    <li>Luces LED durante toda la noche.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Patrocinadores Section -->
+    <div class="sponsors-section">
+        <h3>Nuestros Patrocinadores</h3>
+        <div class="sponsors-logos">
+            <img src="images/lab_foto.jpeg" alt="Patrocinador 1">
+            <img src="images/patrocinador2.jpg" alt="Patrocinador 2">
+            <img src="images/espoleta.svg" alt="Patrocinador 3">
+        </div>
+    </div>
+
+
+    <div class="footer">© 2024 Recomendación Solar. Todos los derechos reservados.</div>
+
+    <script>
+        let total = 0;
+        function toggleSelection(element) {
+            if (element.style.borderColor === 'green') {
+                element.style.borderColor = '#ddd';
+                updatePrice(-parseInt(element.querySelector('p').textContent.match(/\$([0-9]+)/)[1]));
+            } else {
+                element.style.borderColor = 'green';
+                updatePrice(parseInt(element.querySelector('p').textContent.match(/\$([0-9]+)/)[1]));
+            }
+        }
+
+        function updatePrice(amount) {
+            total += amount;
+            document.getElementById('totalPrice').textContent = '$' + total;
+        }
+    </script>
+</body>
+</html>

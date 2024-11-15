@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Energéticas Personalizadas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav h1 {
+            margin: 0;
+        }
+
+        .intro-section {
+            max-width: 800px;
+            margin: 30px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-section h2 {
+            color: #007bff;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .options-section {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option-card {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option-card:hover {
+            background-color: #d4edda;
+        }
+
+        .option-card h3 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            color: #28a745;
+        }
+
+        .option-card p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Bienvenido a Soluciones Energéticas</h1>
+    </nav>
+
+    <div class="intro-section">
+        <h2>Encuentra la Solución Energética Perfecta</h2>
+        <p>
+            Queremos ayudarte a encontrar la mejor solución para tus necesidades energéticas. 
+            Responde unas sencillas preguntas y te ofreceremos un sistema adaptado a tu situación específica.
+        </p>
+    </div>
+
+    <div class="options-section">
+        <div class="option-card" onclick="navigateTo('emergency')">
+            <h3>Emergencia por Apagones o Desastres Naturales</h3>
+            <p>¿Sufres apagones frecuentes o te estás preparando para eventos como ciclones? Encuentra sistemas de respaldo fiables.</p>
+        </div>
+
+        <div class="option-card" onclick="navigateTo('backup')">
+            <h3>Respaldo Permanente para el Hogar</h3>
+            <p>Obtén un sistema que garantice que nunca te quedarás sin electricidad, ideal para tu hogar o negocio.</p>
+        </div>
+
+        <div class="option-card" onclick="navigateTo('offgrid')">
+            <h3>Sistemas para Zonas Remotas o Fincas</h3>
+            <p>Soluciones completas de energía para lugares sin acceso a la red eléctrica.</p>
+        </div>
+
+        <div class="option-card" onclick="navigateTo('saving')">
+            <h3>Optimización del Consumo Energético</h3>
+            <p>¿Quieres ahorrar en tu factura eléctrica? Te ayudamos a reducir tu consumo con sistemas eficientes.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Soluciones Energéticas. Todos los derechos reservados.</p>
+    </div>
+
+    <script>
+        function navigateTo(option) {
+            switch(option) {
+                case 'emergency':
+                    window.location.href = 'emergency_solution.html';
+                    break;
+                case 'backup':
+                    window.location.href = 'backup_solution.html';
+                    break;
+                case 'offgrid':
+                    window.location.href = 'offgrid_solution.html';
+                    break;
+                case 'saving':
+                    window.location.href = 'saving_solution.html';
+                    break;
+                default:
+                    alert('Opción no válida.');
+            }
+        }
+    </script>
+
+</body>
+</html>
