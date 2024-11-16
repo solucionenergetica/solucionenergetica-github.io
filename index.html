@@ -16,7 +16,7 @@
         }
 
         nav {
-            background-color: #007bff;
+            background-color: #053365;
             color: white;
             padding: 20px;
             text-align: center;
@@ -38,8 +38,8 @@
         }
 
         .intro-section h2 {
-            color: #007bff;
-            font-size: 28px;
+            color: #a20707;
+            font-size: 35px;
             margin-bottom: 20px;
         }
 
@@ -83,13 +83,124 @@
         }
 
         .footer {
-            background-color: #007bff;
+            background-color: #053365;
             color: white;
             text-align: center;
             padding: 15px;
-            margin-top: 20px;
+            /* margin-top: 20px; */
             width: 100%;
         }
+        .sponsors-section {
+    background: #f8f8f8;
+    padding: 36px 20px;
+    text-align: center;
+    margin: 60px 0;
+    border-top: 2px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.sponsors-section h3 {
+    font-size: 36px;
+    color: #333;
+    /* margin-bottom: 30px; */
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.sponsors-logos {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.sponsor-card {
+    background-color: #fff;
+    /* padding: 5px; */
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+.sponsor-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    /* margin-bottom: 15px; */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.sponsor-logo img {
+    max-height: 200px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.sponsor-card p {
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+    margin: 0;
+}
+/* Modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #0066cc;
+}
+
+.modal-body {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
     </style>
 </head>
 <body>
@@ -99,20 +210,19 @@
     </nav>
 
     <div class="intro-section">
-        <h2>Encuentra la Solución Energética Perfecta</h2>
+        <h2>¡¡No compres el generador incorrecto!!</h2>
         <p>
             Queremos ayudarte a encontrar la mejor solución para tus necesidades energéticas. 
             Responde unas sencillas preguntas y te ofreceremos un sistema adaptado a tu situación específica.
         </p>
     </div>
-
-    <div class="options-section">
+    <div class="options-section"></div>
         <div class="option-card" onclick="navigateTo('emergency')">
             <h3>Emergencia por Apagones o Desastres Naturales</h3>
             <p>¿Sufres apagones frecuentes o te estás preparando para eventos como ciclones? Encuentra sistemas de respaldo fiables.</p>
         </div>
 
-        <div class="option-card" onclick="navigateTo('backup')">
+        <!-- <div class="option-card" onclick="navigateTo('backup')">
             <h3>Respaldo Permanente para el Hogar</h3>
             <p>Obtén un sistema que garantice que nunca te quedarás sin electricidad, ideal para tu hogar o negocio.</p>
         </div>
@@ -125,11 +235,56 @@
         <div class="option-card" onclick="navigateTo('saving')">
             <h3>Optimización del Consumo Energético</h3>
             <p>¿Quieres ahorrar en tu factura eléctrica? Te ayudamos a reducir tu consumo con sistemas eficientes.</p>
+        </div> -->
+    </div>
+<!-- Patrocinadores Section -->
+<div class="sponsors-section">
+    <h3>Nuestros Patrocinadores</h3>
+    <div class="sponsors-logos">
+        <div class="sponsor-card" onclick="openModal('patrocinador1')">
+            <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd;">
+                <img src="lab-foto.jpeg" alt="Patrocinador 1">
+            </div>
+           
+        </div>
+        <div class="sponsor-card" onclick="openModal('patrocinador2')">
+            <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd;">
+                <img src="espoelta.svg" alt="Patrocinador 2">
+            </div>
+         
         </div>
     </div>
+</div>
+
+<!-- Modal para Patrocinador 1 -->
+<div id="patrocinador1Modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('patrocinador1')">&times;</span>
+        <div class="modal-header">Laboratorio de Fotovoltaica</div>
+        <div class="modal-body">
+            <p> El laboratorio de Fotovoltaica que pertenece a la Universidad de la Habana es líder en soluciones innovadoras para la industria de energía renovable. Proporcionan paneles solares de alta eficiencia y productos relacionados.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Patrocinador 2 -->
+<div id="patrocinador2Modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('patrocinador2')">&times;</span>
+        <div class="modal-header">Espoelta Tecnologías</div>
+        <div class="modal-body">
+            <p>Espoelta Tecnologías se especializa en el almacenamiento de energía, con baterías de última generación que maximizan la eficiencia y el ahorro energético.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
 
     <div class="footer">
-        <p>© 2024 Soluciones Energéticas. Todos los derechos reservados.</p>
+        <p>© 2024 Espoleta Tecnologías. Todos los derechos reservados.</p>
     </div>
 
     <script>
@@ -151,6 +306,16 @@
                     alert('Opción no válida.');
             }
         }
+        // Función para abrir el modal
+        function openModal(modalId) {
+            document.getElementById(modalId + 'Modal').style.display = "block";
+        }
+
+        // Función para cerrar el modal
+        function closeModal(modalId) {
+            document.getElementById(modalId + 'Modal').style.display = "none";
+        }
+
     </script>
 
 </body>
