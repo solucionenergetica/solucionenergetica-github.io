@@ -11,8 +11,8 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
         }
 
@@ -27,15 +27,19 @@
             font-size: 20px;
             font-weight: bold;
             border-bottom: 4px solid #004a99;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         nav .title {
             font-size: 28px;
         }
+
         nav .nav-buttons {
             display: flex;
             gap: 15px;
         }
+
         .nav-button {
             background-color: white;
             color: #0066cc;
@@ -57,25 +61,15 @@
             display: flex;
             gap: 30px;
             padding: 20px;
-        }
-        .concetp-main{
-            display: flex;
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .left-column {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            box-sizing: border-box;
         }
 
-        .right-column {
-            width: 65%;
-            display: flex;
-            flex-direction: column;
+        .left-column, .right-column {
+            flex: 1;
+            min-width: 280px;
             padding: 20px;
         }
 
@@ -104,6 +98,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            width: 100%;
         }
 
         button:hover {
@@ -152,7 +147,6 @@
 
         .device-form h4 {
             margin: 0;
-            flex: 1;
             font-size: 16px;
             color: #555;
         }
@@ -176,14 +170,6 @@
             background-color: #f8f9fa;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        #suggestions .suggestion-item {
-            background-color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
         }
 
         #recommendationBtn {
@@ -215,6 +201,7 @@
         .recommendation-button:hover {
             background-color: #218838;
         }
+
         .footer {
             background-color: #007bff;
             color: white;
@@ -224,109 +211,56 @@
             bottom: 0;
             width: 100%;
         }
-        .concepts-section {
-    background-color: #ffffff;
-    padding: 20px 30px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.concepts-section h2 {
-    text-align: center;
-    color: #053365;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
+        @media (max-width: 1200px) {
+            .main-content {
+                flex-direction: column;
+            }
+        }
 
-.concept-item {
-    margin-bottom: 20px;
-}
+        @media (max-width: 768px) {
+            nav {
+                font-size: 18px;
+                padding: 10px;
+            }
 
-.concept-item h3 {
-    font-size: 22px;
-    color: #007bff;
-    margin-bottom: 10px;
-}
+            .concept-item h3 {
+                font-size: 18px;
+            }
 
-.concept-item p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-.nevera img{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 400px;
-    height: 350px;
-    /* margin-right: 15px; */
+            .concept-item p {
+                font-size: 14px;
+            }
 
-}
-@media (max-width: 1200px) {
-    .main-content {
-        flex-direction: column;
-    }
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
 
-    .left-column, .right-column {
-        width: 100%;
-    }
-}
+            #result, #recommendations {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
 
-@media (max-width: 768px) {
-    nav {
-        font-size: 18px;
-        padding: 10px;
-    }
+        @media (max-width: 480px) {
+            nav h1 {
+                font-size: 16px;
+            }
 
-    .concepts-section {
-        padding: 10px;
-    }
+            .device-form h4 {
+                font-size: 14px;
+            }
 
-    .concept-item h3 {
-        font-size: 18px;
-    }
+            .device-form input[type="number"] {
+                width: 100%;
+            }
 
-    .concept-item p {
-        font-size: 14px;
-    }
-
-    .nevera img {
-        width: 100%;
-        height: auto;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    #result, #recommendations {
-        font-size: 16px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    nav h1 {
-        font-size: 16px;
-    }
-
-    .device-form h4 {
-        font-size: 14px;
-    }
-
-    .device-form input[type="number"] {
-        width: 100%;
-    }
-
-    button {
-        font-size: 12px;
-        padding: 6px;
-    }
-}
-
+            button {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
 
     </style>
 </head>
@@ -334,38 +268,15 @@
 
     <!-- Navbar -->
     <nav>
-        <div class="title">Descubre Justo lo que necesitas</div>
+        <div class="title">Calculadora de Consumo Eléctrico</div>
         <div class="nav-buttons">
             <a href="index.html" class="nav-button">Inicio</a>
             <a href="emergency_solution.html" class="nav-button">Atras</a>
         </div>
     </nav>
-    <!-- <div class="concetp-main">
-        <div class="left-column">
-            <div class="nevera">
-                <img src="nevera.jpg" alt="Patrocinador 1">
-            </div>
-        </div> -->
-    <!-- Sección de conceptos importantes -->
-    <!-- <div class="right-column">
-        <section class="concepts-section">
-            <div class="concept">
-                <h2>¿Qué necesitas saber al comprar un equipo eléctrico?</h2>
-                <div class="concept-item">
-                    <h3>1. Potencia (Wattage)</h3>
-                    <p>La potencia indica cuánta electricidad usa un equipo cuando está funcionando. Por ejemplo, un ventilador de 75W consume menos energía que un microondas de 1200W. Más watts significa más gasto energético por hora.</p>
-                </div>
-                <div class="concept-item">
-                    <h3>2. Consumo Energético</h3>
-                    <p>El consumo energético es el uso total de electricidad en un periodo. Si un equipo de 100W funciona 5 horas al día, consume 500Wh al día (100W x 5h = 500Wh). Este dato es clave para calcular cuánto pagarás en la factura eléctrica.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-</div> -->
 
     <div class="main-content">
-        <!-- Left Column (Dropdown, Formulario y Resultados) -->
+        <!-- Left Column (Formulario de dispositivos) -->
         <div class="left-column">
             <form id="mainForm">
                 <div class="form-group">
@@ -386,7 +297,7 @@
             <!-- Resultados de potencia y consumo -->
             <div id="result"></div>
 
-            <!-- Recomendación de módulo (debajo de los resultados) -->
+            <!-- Recomendación de módulo -->
             <div id="recommendations"></div>
         </div>
 
@@ -395,115 +306,53 @@
             <div id="deviceForms"></div>
         </div>
     </div>
-    
 
     <script>
         let devices = [];
-    
+
         function addDeviceForm() {
             const deviceSelect = document.getElementById('deviceSelect');
             const selectedOption = deviceSelect.options[deviceSelect.selectedIndex];
             const selectedDevice = selectedOption.value;
-    
+
             if (!selectedDevice) {
                 alert('Por favor selecciona un dispositivo.');
                 return;
             }
-    
+
             // Comprobar si el dispositivo ya está en la lista
             if (devices.some(device => device.name === selectedDevice)) {
                 alert(`El dispositivo "${selectedDevice}" ya ha sido agregado.`);
                 return;
             }
-    
+
             const defaultPower = selectedOption.getAttribute('data-power');
-            const deviceId = `device-${devices.length}`;
-            devices.push({ id: deviceId, name: selectedDevice });
-    
-            const formContainer = document.createElement('div');
-            formContainer.className = 'device-form';
-            formContainer.id = deviceId;
-    
-            formContainer.innerHTML = `
-                <h4>${selectedDevice}</h4>
-                <div>
-                    <label for="power-${deviceId}">Potencia (W)</label>
-                    <input type="number" id="power-${deviceId}" value="${defaultPower}" readonly>
+            const deviceId = `device_${devices.length + 1}`;
+            const deviceFormHTML = `
+                <div class="device-form" id="${deviceId}">
+                    <div>
+                        <h4>${selectedDevice}</h4>
+                        <label for="${deviceId}_hours">Horas de uso diario:</label>
+                        <input type="number" id="${deviceId}_hours" value="1" min="1">
+                    </div>
+                    <button type="button" onclick="removeDeviceForm('${deviceId}')">Eliminar</button>
                 </div>
-                <div>
-                    <label for="hours-${deviceId}">Horas de uso diario</label>
-                    <input type="number" id="hours-${deviceId}" placeholder="Horas" min="0">
-                </div>
-                <div>
-                    <label for="quantity-${deviceId}">Cantidad de equipos</label>
-                    <input type="number" id="quantity-${deviceId}" placeholder="Cantidad" min="1" value="1">
-                </div>
-                <button type="button" onclick="removeDeviceForm('${deviceId}')">Eliminar</button>
             `;
-    
-            document.getElementById('deviceForms').appendChild(formContainer);
-    
-            // Escuchar cambios en los campos para recalcular automáticamente
-            document.getElementById(`hours-${deviceId}`).addEventListener('input', calculateTotal);
-            document.getElementById(`quantity-${deviceId}`).addEventListener('input', calculateTotal);
-    
-            deviceSelect.value = ''; // Reset dropdown
-            calculateTotal();
+
+            // Agregar el formulario al DOM
+            document.getElementById('deviceForms').insertAdjacentHTML('beforeend', deviceFormHTML);
+
+            // Guardar dispositivo en el array
+            devices.push({ name: selectedDevice, power: defaultPower });
         }
-    
+
         function removeDeviceForm(deviceId) {
-            const formElement = document.getElementById(deviceId);
-            formElement.remove();
-            devices = devices.filter(d => d.id !== deviceId);
-            calculateTotal();
-        }
-    
-        function calculateTotal() {
-            let totalPower = 0;
-            let totalEnergy = 0;
-    
-            devices.forEach(d => {
-                const power = document.getElementById(`power-${d.id}`).value;
-                const hours = document.getElementById(`hours-${d.id}`).value || 0;
-                const quantity = document.getElementById(`quantity-${d.id}`).value || 1;
-                totalPower += (power * quantity);
-                totalEnergy += (power * hours * quantity);
-            });
-    
-            displayResults(totalPower, totalEnergy);
-        }
-    
-        function displayResults(totalPower, totalEnergy) {
-            const resultDiv = document.getElementById('result');
-            const totalPowerFormatted = totalPower.toFixed(2);
-            const totalEnergyFormatted = totalEnergy.toFixed(2);
-    
-            if (totalPower > 0) {
-                resultDiv.style.display = 'block';
-                resultDiv.innerHTML = `
-                    <h3>Resultados</h3>
-                    <p><strong>Potencia Total Requerida:</strong> ${totalPowerFormatted} W</p>
-                    <p><strong>Consumo Diario Total:</strong> ${totalEnergyFormatted} Wh</p>
-                `;
-            } else {
-                resultDiv.style.display = 'none';
-            }
-    
-            showRecommendation(totalPower);
-        }
-    
-        function showRecommendation(totalPower) {
-            const suggestionsDiv = document.getElementById('recommendations');
-            let suggestionsHtml = `<h3>Recomendación de Módulo</h3>`;
-    
-            suggestionsHtml += `<button id="recommendationBtn" onclick="window.location.href='modulo_solar.html'">Ver Módulo</button>`;
-            suggestionsDiv.innerHTML = suggestionsHtml;
-            suggestionsDiv.style.display = 'block';
+            const deviceForm = document.getElementById(deviceId);
+            deviceForm.remove();
+
+            // Eliminar del array
+            devices = devices.filter(device => device.name !== deviceId);
         }
     </script>
-    
-    
-
 </body>
-
 </html>
