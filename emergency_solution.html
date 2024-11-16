@@ -11,8 +11,6 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
             flex-direction: column;
         }
 
@@ -30,19 +28,23 @@
         }
 
         nav .title {
-            font-size: 28px;
+            font-size: 24px;
+            text-align: center;
+            flex: 1;
         }
+
         nav .nav-buttons {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
+
         .nav-button {
             background-color: white;
             color: #0066cc;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border: none;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -55,32 +57,29 @@
 
         .main-content {
             display: flex;
-            gap: 30px;
-            padding: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 10px;
         }
-        .concetp-main{
-            display: flex;
-            gap: 30px;
-            padding: 20px;
+
+        .left-column, .right-column {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         .left-column {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
+            order: 1;
         }
 
         .right-column {
-            width: 65%;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
+            order: 2;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         label {
@@ -94,6 +93,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
         }
 
         button {
@@ -104,38 +104,27 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            width: 100%;
         }
 
         button:hover {
             background-color: #218838;
         }
 
-        /* Estilo para los resultados */
         #result, #recommendations {
-            margin-top: 20px;
-            font-size: 18px;
+            margin-top: 15px;
+            font-size: 16px;
             text-align: center;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             display: none; /* Inicialmente oculto */
-        }
-
-        #result h3, #recommendations h3 {
-            color: #007bff;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        #result p, #recommendations p {
-            font-size: 18px;
-            color: #333;
-            margin: 10px 0;
         }
 
         .device-form {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             gap: 10px;
             background: #fff;
@@ -145,20 +134,16 @@
             border-radius: 5px;
         }
 
-        .device-form div {
-            display: flex;
-            flex-direction: column;
-        }
-
         .device-form h4 {
             margin: 0;
-            flex: 1;
+            flex-basis: 100%;
             font-size: 16px;
             color: #555;
         }
 
-        .device-form input[type="number"] {
-            width: 80px;
+        .device-form div {
+            flex: 1;
+            min-width: 100px;
         }
 
         .device-form button {
@@ -169,165 +154,50 @@
             background-color: #c82333;
         }
 
-        /* Estilo para las sugerencias */
-        #suggestions {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav .nav-buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .main-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .left-column, .right-column {
+                width: 100%;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
         }
 
-        #suggestions .suggestion-item {
-            background-color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        @media (max-width: 480px) {
+            nav .title {
+                font-size: 18px;
+            }
+
+            .device-form h4 {
+                font-size: 14px;
+            }
+
+            .device-form input[type="number"] {
+                width: 100%;
+            }
+
+            button {
+                font-size: 12px;
+                padding: 6px;
+            }
         }
-
-        #recommendationBtn {
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            text-align: center;
-        }
-
-        #recommendationBtn:hover {
-            background-color: #0056b3;
-        }
-
-        .recommendation-button {
-            background-color: #28a745;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 5px;
-            font-size: 14px;
-        }
-
-        .recommendation-button:hover {
-            background-color: #218838;
-        }
-        .footer {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .concepts-section {
-    background-color: #ffffff;
-    padding: 20px 30px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.concepts-section h2 {
-    text-align: center;
-    color: #053365;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.concept-item {
-    margin-bottom: 20px;
-}
-
-.concept-item h3 {
-    font-size: 22px;
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-.concept-item p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-.nevera img{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 400px;
-    height: 350px;
-    /* margin-right: 15px; */
-
-}
-@media (max-width: 1200px) {
-    .main-content {
-        flex-direction: column;
-    }
-
-    .left-column, .right-column {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    nav {
-        font-size: 18px;
-        padding: 10px;
-    }
-
-    .concepts-section {
-        padding: 10px;
-    }
-
-    .concept-item h3 {
-        font-size: 18px;
-    }
-
-    .concept-item p {
-        font-size: 14px;
-    }
-
-    .nevera img {
-        width: 100%;
-        height: auto;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    #result, #recommendations {
-        font-size: 16px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    nav h1 {
-        font-size: 16px;
-    }
-
-    .device-form h4 {
-        font-size: 14px;
-    }
-
-    .device-form input[type="number"] {
-        width: 100%;
-    }
-
-    button {
-        font-size: 12px;
-        padding: 6px;
-    }
-}
-
-
     </style>
 </head>
 <body>
@@ -337,32 +207,9 @@
         <div class="title">Descubre Justo lo que necesitas</div>
         <div class="nav-buttons">
             <a href="index.html" class="nav-button">Inicio</a>
-            <a href="emergency_solution.html" class="nav-button">Atras</a>
+            <a href="emergency_solution.html" class="nav-button">Atrás</a>
         </div>
     </nav>
-    <!-- <div class="concetp-main">
-        <div class="left-column">
-            <div class="nevera">
-                <img src="nevera.jpg" alt="Patrocinador 1">
-            </div>
-        </div> -->
-    <!-- Sección de conceptos importantes -->
-    <!-- <div class="right-column">
-        <section class="concepts-section">
-            <div class="concept">
-                <h2>¿Qué necesitas saber al comprar un equipo eléctrico?</h2>
-                <div class="concept-item">
-                    <h3>1. Potencia (Wattage)</h3>
-                    <p>La potencia indica cuánta electricidad usa un equipo cuando está funcionando. Por ejemplo, un ventilador de 75W consume menos energía que un microondas de 1200W. Más watts significa más gasto energético por hora.</p>
-                </div>
-                <div class="concept-item">
-                    <h3>2. Consumo Energético</h3>
-                    <p>El consumo energético es el uso total de electricidad en un periodo. Si un equipo de 100W funciona 5 horas al día, consume 500Wh al día (100W x 5h = 500Wh). Este dato es clave para calcular cuánto pagarás en la factura eléctrica.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-</div> -->
 
     <div class="main-content">
         <!-- Left Column (Dropdown, Formulario y Resultados) -->
@@ -388,7 +235,7 @@
             <!-- Resultados de potencia y consumo -->
             <div id="result"></div>
 
-            <!-- Recomendación de módulo (debajo de los resultados) -->
+            <!-- Recomendación de módulo -->
             <div id="recommendations"></div>
         </div>
 
