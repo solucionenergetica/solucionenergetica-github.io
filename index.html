@@ -87,119 +87,191 @@
             color: white;
             text-align: center;
             padding: 15px;
-            /* margin-top: 20px; */
             width: 100%;
         }
+
         .sponsors-section {
-    background: #f8f8f8;
-    padding: 36px 20px;
-    text-align: center;
-    margin: 60px 0;
-    border-top: 2px solid #e0e0e0;
-    border-bottom: 2px solid #e0e0e0;
-}
+            background: #f8f8f8;
+            padding: 36px 20px;
+            text-align: center;
+            margin: 60px 0;
+            border-top: 2px solid #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
+        }
 
-.sponsors-section h3 {
-    font-size: 36px;
-    color: #333;
-    /* margin-bottom: 30px; */
-    font-weight: 600;
-    letter-spacing: 1px;
-}
+        .sponsors-section h3 {
+            font-size: 36px;
+            color: #333;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
 
-.sponsors-logos {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
+        .sponsors-logos {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
 
-.sponsor-card {
-    background-color: #fff;
-    /* padding: 5px; */
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 600px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .sponsor-card {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 600px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px;
+        }
 
-.sponsor-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
-}
+        .sponsor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+        }
 
-.sponsor-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    /* margin-bottom: 15px; */
-    border-radius: 12px;
-    overflow: hidden;
-}
+        .sponsor-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
 
-.sponsor-logo img {
-    max-height: 200px;
-    max-width: 100%;
-    object-fit: contain;
-}
+        .sponsor-logo img {
+            max-height: 200px;
+            max-width: 100%;
+            object-fit: contain;
+        }
 
-.sponsor-card p {
-    font-size: 18px;
-    color: #555;
-    font-weight: 500;
-    margin: 0;
-}
-/* Modales */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding-top: 60px;
-}
+        .sponsor-card p {
+            font-size: 18px;
+            color: #555;
+            font-weight: 500;
+            margin: 0;
+        }
 
-.modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border-radius: 12px;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
+        /* Modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
 
-.modal-header {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #0066cc;
-}
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-.modal-body {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #555;
-}
+        .modal-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0066cc;
+        }
 
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
+        .modal-body {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Estilos responsive */
+        @media (max-width: 768px) {
+            .intro-section h2 {
+                font-size: 28px;
+            }
+
+            .intro-section p {
+                font-size: 16px;
+            }
+
+            .option-card h3 {
+                font-size: 18px;
+            }
+
+            .option-card p {
+                font-size: 14px;
+            }
+
+            .sponsors-section h3 {
+                font-size: 28px;
+            }
+
+            .sponsor-card {
+                width: 100%;
+                max-width: 350px;
+                margin: 10px auto;
+            }
+
+            .sponsors-logos {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer {
+                padding: 10px;
+            }
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 480px) {
+            nav h1 {
+                font-size: 22px;
+            }
+
+            .intro-section {
+                padding: 15px;
+            }
+
+            .intro-section h2 {
+                font-size: 24px;
+            }
+
+            .intro-section p {
+                font-size: 14px;
+            }
+
+            .option-card h3 {
+                font-size: 16px;
+            }
+
+            .option-card p {
+                font-size: 12px;
+            }
+
+            .sponsors-section h3 {
+                font-size: 24px;
+            }
+
+            .sponsor-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
 
     </style>
 </head>
@@ -216,72 +288,52 @@
             Responde unas sencillas preguntas y te ofreceremos un sistema adaptado a tu situación específica.
         </p>
     </div>
-    <div class="options-section"></div>
+    
+    <div class="options-section">
         <div class="option-card" onclick="navigateTo('emergency')">
             <h3>Emergencia por Apagones o Desastres Naturales</h3>
             <p>¿Sufres apagones frecuentes o te estás preparando para eventos como ciclones? Encuentra sistemas de respaldo fiables.</p>
         </div>
-
-        <!-- <div class="option-card" onclick="navigateTo('backup')">
-            <h3>Respaldo Permanente para el Hogar</h3>
-            <p>Obtén un sistema que garantice que nunca te quedarás sin electricidad, ideal para tu hogar o negocio.</p>
-        </div>
-
-        <div class="option-card" onclick="navigateTo('offgrid')">
-            <h3>Sistemas para Zonas Remotas o Fincas</h3>
-            <p>Soluciones completas de energía para lugares sin acceso a la red eléctrica.</p>
-        </div>
-
-        <div class="option-card" onclick="navigateTo('saving')">
-            <h3>Optimización del Consumo Energético</h3>
-            <p>¿Quieres ahorrar en tu factura eléctrica? Te ayudamos a reducir tu consumo con sistemas eficientes.</p>
-        </div> -->
     </div>
-<!-- Patrocinadores Section -->
-<div class="sponsors-section">
-    <h3>Nuestros Patrocinadores</h3>
-    <div class="sponsors-logos">
-        <div class="sponsor-card" onclick="openModal('patrocinador1')">
-            <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd;">
-                <img src="lab-foto.jpeg" alt="Patrocinador 1">
+
+    <!-- Patrocinadores Section -->
+    <div class="sponsors-section">
+        <h3>Nuestros Patrocinadores</h3>
+        <div class="sponsors-logos">
+            <div class="sponsor-card" onclick="openModal('patrocinador1')">
+                <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd;">
+                    <img src="lab-foto.jpeg" alt="Patrocinador 1">
+                </div>
             </div>
-           
-        </div>
-        <div class="sponsor-card" onclick="openModal('patrocinador2')">
-            <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd;">
-                <img src="espoelta.svg" alt="Patrocinador 2">
+            <div class="sponsor-card" onclick="openModal('patrocinador2')">
+                <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd;">
+                    <img src="espoelta.svg" alt="Patrocinador 2">
+                </div>
             </div>
-         
         </div>
     </div>
-</div>
 
-<!-- Modal para Patrocinador 1 -->
-<div id="patrocinador1Modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('patrocinador1')">&times;</span>
-        <div class="modal-header">Laboratorio de Fotovoltaica</div>
-        <div class="modal-body">
-            <p> El laboratorio de Fotovoltaica que pertenece a la Universidad de la Habana es líder en soluciones innovadoras para la industria de energía renovable. Proporcionan paneles solares de alta eficiencia y productos relacionados.</p>
+    <!-- Modal para Patrocinador 1 -->
+    <div id="patrocinador1Modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('patrocinador1')">&times;</span>
+            <div class="modal-header">Laboratorio de Fotovoltaica</div>
+            <div class="modal-body">
+                <p> El laboratorio de Fotovoltaica que pertenece a la Universidad de la Habana es líder en soluciones innovadoras para la industria de energía renovable. Proporcionan paneles solares de alta eficiencia y productos relacionados.</p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Modal para Patrocinador 2 -->
-<div id="patrocinador2Modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('patrocinador2')">&times;</span>
-        <div class="modal-header">Espoelta Tecnologías</div>
-        <div class="modal-body">
-            <p>Espoelta Tecnologías se especializa en el almacenamiento de energía, con baterías de última generación que maximizan la eficiencia y el ahorro energético.</p>
+    <!-- Modal para Patrocinador 2 -->
+    <div id="patrocinador2Modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('patrocinador2')">&times;</span>
+            <div class="modal-header">Espoelta Tecnologías</div>
+            <div class="modal-body">
+                <p>Espoelta Tecnologías se especializa en el almacenamiento de energía, con baterías de última generación que maximizan la eficiencia y el ahorro energético.</p>
+            </div>
         </div>
     </div>
-</div>
-
-
-
-
-    
 
     <div class="footer">
         <p>© 2024 Espoleta Tecnologías. Todos los derechos reservados.</p>
@@ -293,25 +345,15 @@
                 case 'emergency':
                     window.location.href = 'emergency_solution.html';
                     break;
-                case 'backup':
-                    window.location.href = 'backup_solution.html';
-                    break;
-                case 'offgrid':
-                    window.location.href = 'offgrid_solution.html';
-                    break;
-                case 'saving':
-                    window.location.href = 'saving_solution.html';
-                    break;
                 default:
                     alert('Opción no válida.');
             }
         }
-        // Función para abrir el modal
+
         function openModal(modalId) {
             document.getElementById(modalId + 'Modal').style.display = "block";
         }
 
-        // Función para cerrar el modal
         function closeModal(modalId) {
             document.getElementById(modalId + 'Modal').style.display = "none";
         }
