@@ -105,6 +105,12 @@
             font-weight: 600;
             letter-spacing: 1px;
         }
+        .sponsors-logos1 {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
 
         .sponsors-logos {
             display: flex;
@@ -128,6 +134,14 @@
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
         }
 
+        .sponsor-logo1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
         .sponsor-logo {
             display: flex;
             justify-content: center;
@@ -137,9 +151,14 @@
             overflow: hidden;
         }
 
-        .sponsor-logo img {
+        .sponsor-logo1 img {
             max-height: 200px;
-            max-width: 100%;
+            max-width: 150%;
+            object-fit: contain;
+        }
+        .sponsor-logo img {
+            height: 398px;
+            width: 100%;
             object-fit: contain;
         }
 
@@ -301,13 +320,13 @@
         <h3>Nuestros Patrocinadores</h3>
         <div class="sponsors-logos">
             <div class="sponsor-card" onclick="openModal('patrocinador1')">
-                <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd;">
+                <div class="sponsor-logo1" style="background-color: #fff; border: 1px solid #ddd;">
                     <img src="lab-foto.jpeg" alt="Patrocinador 1">
                 </div>
             </div>
             <div class="sponsor-card" onclick="openModal('patrocinador2')">
-                <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd;">
-                    <img src="espoelta.svg" alt="Patrocinador 2">
+                <div class="sponsor-logo" style="background-color: #fff; border: 1px solid #ddd; ">
+                    <img src="espoelta.svg" alt="Patrocinador 2" >
                 </div>
             </div>
         </div>
