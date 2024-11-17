@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Consumo Eléctrico</title>
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -68,6 +74,7 @@
             border-radius: 8px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             width: 100%;
+            overflow-x: hidden;
         }
 
         .left-column {
@@ -156,7 +163,7 @@
 
         @media (max-width: 768px) {
             nav {
-                flex-direction: column;
+                flex-direction: row;
                 text-align: center;
             }
 
@@ -196,6 +203,14 @@
             button {
                 font-size: 12px;
                 padding: 6px;
+            }
+            .left-column, .right-column {
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                width: 90%;
+                overflow-x: hidden;
             }
         }
     </style>
@@ -247,112 +262,11 @@
     
 
     <script>
-        let devices = [];
-    
-        function addDeviceForm() {
-            const deviceSelect = document.getElementById('deviceSelect');
-            const selectedOption = deviceSelect.options[deviceSelect.selectedIndex];
-            const selectedDevice = selectedOption.value;
-    
-            if (!selectedDevice) {
-                alert('Por favor selecciona un dispositivo.');
-                return;
-            }
-    
-            // Comprobar si el dispositivo ya está en la lista
-            if (devices.some(device => device.name === selectedDevice)) {
-                alert(`El dispositivo "${selectedDevice}" ya ha sido agregado.`);
-                return;
-            }
-    
-            const defaultPower = selectedOption.getAttribute('data-power');
-            const deviceId = `device-${devices.length}`;
-            devices.push({ id: deviceId, name: selectedDevice });
-    
-            const formContainer = document.createElement('div');
-            formContainer.className = 'device-form';
-            formContainer.id = deviceId;
-    
-            formContainer.innerHTML = `
-                <h4>${selectedDevice}</h4>
-                <div>
-                    <label for="power-${deviceId}">Potencia (W)</label>
-                    <input type="number" id="power-${deviceId}" value="${defaultPower}" readonly>
-                </div>
-                <div>
-                    <label for="hours-${deviceId}">Horas de uso diario</label>
-                    <input type="number" id="hours-${deviceId}" placeholder="Horas" min="0">
-                </div>
-                <div>
-                    <label for="quantity-${deviceId}">Cantidad de equipos</label>
-                    <input type="number" id="quantity-${deviceId}" placeholder="Cantidad" min="1" value="1">
-                </div>
-                <button type="button" onclick="removeDeviceForm('${deviceId}')">Eliminar</button>
-            `;
-    
-            document.getElementById('deviceForms').appendChild(formContainer);
-    
-            // Escuchar cambios en los campos para recalcular automáticamente
-            document.getElementById(`hours-${deviceId}`).addEventListener('input', calculateTotal);
-            document.getElementById(`quantity-${deviceId}`).addEventListener('input', calculateTotal);
-    
-            deviceSelect.value = ''; // Reset dropdown
-            calculateTotal();
-        }
-    
-        function removeDeviceForm(deviceId) {
-            const formElement = document.getElementById(deviceId);
-            formElement.remove();
-            devices = devices.filter(d => d.id !== deviceId);
-            calculateTotal();
-        }
-    
-        function calculateTotal() {
-            let totalPower = 0;
-            let totalEnergy = 0;
-    
-            devices.forEach(d => {
-                const power = document.getElementById(`power-${d.id}`).value;
-                const hours = document.getElementById(`hours-${d.id}`).value || 0;
-                const quantity = document.getElementById(`quantity-${d.id}`).value || 1;
-                totalPower += (power * quantity);
-                totalEnergy += (power * hours * quantity);
-            });
-    
-            displayResults(totalPower, totalEnergy);
-        }
-    
-        function displayResults(totalPower, totalEnergy) {
-            const resultDiv = document.getElementById('result');
-            const totalPowerFormatted = totalPower.toFixed(2);
-            const totalEnergyFormatted = totalEnergy.toFixed(2);
-    
-            if (totalPower > 0) {
-                resultDiv.style.display = 'block';
-                resultDiv.innerHTML = `
-                    <h3>Resultados</h3>
-                    <p><strong>Potencia Total Requerida:</strong> ${totalPowerFormatted} W</p>
-                    <p><strong>Consumo Diario Total:</strong> ${totalEnergyFormatted} Wh</p>
-                `;
-            } else {
-                resultDiv.style.display = 'none';
-            }
-    
-            showRecommendation(totalPower);
-        }
-    
-        function showRecommendation(totalPower) {
-            const suggestionsDiv = document.getElementById('recommendations');
-            let suggestionsHtml = `<h3>Recomendación de Módulo</h3>`;
-    
-            suggestionsHtml += `<button id="recommendationBtn" onclick="window.location.href='modulo_solar.html'">Ver Módulo</button>`;
-            suggestionsDiv.innerHTML = suggestionsHtml;
-            suggestionsDiv.style.display = 'block';
-        }
+        
     </script>
     
     
-
+    <script src="script.js"></script>
 </body>
 
 </html>
