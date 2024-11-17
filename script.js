@@ -67,14 +67,24 @@
 
         function sendData() {
             const phoneNumber = document.getElementById('phoneNumber').value;
+            
+            // Formar un mensaje con la cantidad de cada módulo seleccionado
             const emailBody = `
                 Número de Teléfono: ${phoneNumber}
-                Módulos seleccionados: ${selectedModules.join(', ')}
+                Módulos seleccionados:
+                ${selectedModules.join(', ')}
+        
+                Cantidad de Paneles Solares: ${cantpaneles}
+                Cantidad de Baterías: ${cantbaterias}
+                
+        
                 Total: $${total}
             `;
             
+            // Enviar el correo con la información de la compra
             window.location.href = `mailto:espoleta.tech@gmail.com?subject=Compra de Módulos Solares&body=${encodeURIComponent(emailBody)}`;
         }
+        
 
         
 
@@ -110,7 +120,7 @@
                 <h4>${selectedDevice}</h4>
                 <div>
                     <label for="power-${deviceId}">Potencia (W)</label>
-                    <input type="number" id="power-${deviceId}" value="${defaultPower}" readonly>
+                    <input type="number" id="power-${deviceId}" value="${defaultPower}" min="0">
                 </div>
                 <div>
                     <label for="hours-${deviceId}">Horas de uso diario</label>
