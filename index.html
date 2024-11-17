@@ -60,16 +60,26 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            align-items: center;
+        }
+        .option-card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
         }
 
         .option-card {
             background-color: #e9ecef;
             padding: 15px;
             border-radius: 8px;
-            text-align: left;
+            object-position: center;
+            text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: background-color 0.3s;
+            max-width: 500px; /* Ajusta esto según sea necesario */
         }
 
         .option-card:hover {
@@ -397,10 +407,12 @@
     
     <div class="options-section">
         <p class="instruction-text">¡Haz clic en la siguiente opción para explorar soluciones personalizadas para apagones o desastres naturales!</p>
-        <div class="option-card" onclick="navigateTo('emergency')">
-            <h3>Emergencia por Apagones o Desastres Naturales</h3>
-            <p>¿Sufres apagones frecuentes o te estás preparando para eventos como ciclones? Encuentra sistemas de respaldo fiables.</p>
-        </div>
+        <div class="option-card-container">
+            <div class="option-card" onclick="navigateTo('emergency')">
+                <h3>Emergencia por Apagones o Desastres Naturales</h3>
+                <p>¿Sufres apagones frecuentes o te estás preparando para eventos como ciclones? Encuentra sistemas de respaldo fiables.</p>
+            </div>
+         </div>
     </div>
 
     <!-- Patrocinadores Section -->
