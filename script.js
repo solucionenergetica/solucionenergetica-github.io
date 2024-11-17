@@ -78,7 +78,7 @@
                 Cantidad de Baterías: ${cantbaterias}
                 
         
-                Total: $${total}
+                Total: $${total*320}
             `;
             
             // Enviar el correo con la información de la compra
