@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía para Comprar Equipos Electrónicos</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+#calculadora {
+    margin-top: 20px;
+}
+
+input[type=number] {
+    margin-right: 10px;
+}
+/* Footer */
+.footer {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 4px solid #004a99;
+}
+
+nav .title {
+    font-size: 18px;
+}
+
+nav .nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    background-color: white;
+    color: #0066cc;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #004a99;
+    color: white;
+}
+.section{
+    margin-bottom:50px;
+}
+    </style>
+    <nav>
+        <div class="title">Sobre Equipos Electrónicos</div>
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Inicio</a>
+            <a href="index.html" class="nav-button">Atrás</a>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="section">
+        <section id="parametros">
+            <h2>Parámetros Clave</h2>
+            <!-- Ejemplo de imagen -->
+            <img src="nevera.jpg" alt="Ejemplo de equipo electrónico" class="responsive" style="width: 300px; margin-bottom: 20px;">
+            <table>
+                <tr>
+                    <th>Parámetro</th>
+                    <th>Descripción</th>
+                    <th>Importancia</th>
+                </tr>
+                <tr>
+                    <td>Wattage</td>
+                    <td>Indica el consumo eléctrico del equipo o cuanta electricidad necesita para operar.</td>
+                    <td>Afecta el consumo energético.</td>
+                </tr>
+                <tr>
+                    <td>Corriente de entrada</td>
+                    <td>Cantidad de corriente que el dispositivo necesita para funcionar.</td>
+                    <td>Asegura que la fuente de alimentación sea adecuada.</td>
+                </tr>
+                <tr>
+                    <td>Corriente de salida</td>
+                    <td>Corriente que el dispositivo puede entregar a otros dispositivos.</td>
+                    <td>Crucial para dispositivos dependientes.</td>
+                </tr>
+                <tr>
+                    <td>Voltaje</td>
+                    <td>Nivel de tensión eléctrica requerido por el dispositivo.</td>
+                    <td>Debe ser compatible con la red eléctrica local. Ejemplo: 110v - 220v</td>
+                </tr>
+                <tr>
+                    <td>Eficiencia energética</td>
+                    <td>Proporción de energía utilizada en comparación con la energía consumida.</td>
+                    <td>Menor desperdicio y ahorro en costos.</td>
+                </tr>
+            </table>
+
+            
+
+        </section>
+    </div>
+
+        <!-- Sección interactiva -->
+        <!-- <section id="calculadora">
+            <h2>Calculadora de Consumo Energético</h2>
+            <label for="wattage">Wattage (W):</label>
+            <input type="number" id="wattage" placeholder="Introduce el wattage">
+            <label for="horas">Horas de uso diario:</label>
+            <input type="number" id="horas" placeholder="Introduce horas">
+            <button onclick="calcularCosto()">Calcular Costo Estimado</button>
+
+            <p id="resultado"></p>
+
+        </section> -->
+
+    </main>
+
+    <div class="footer">© 2024 Espoleta Tecnologías. Todos los derechos reservados.</div>
+
+    <!-- Inclusión del script -->
+    <script>
+        function calcularCosto() {
+            const wattage = document.getElementById('wattage').value;
+            const horas = document.getElementById('horas').value;
+
+            if (wattage && horas) {
+                const kWh = (wattage * horas) / 1000; // Convertir a kWh
+                const costoEstimado = kWh * 0.15; // Suponiendo un costo promedio de $0.15 por kWh
+                document.getElementById('resultado').innerText = `Costo estimado por día: $${costoEstimado.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado').innerText = 'Por favor, introduce valores válidos.';
+            }
+        }
+    </script>
+
+</body>
+</html>
