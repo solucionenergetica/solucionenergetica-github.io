@@ -98,13 +98,13 @@
             color: #555;
         }
 
-        .footer {
+        /* .footer {
             background-color: #053365;
             color: white;
             text-align: center;
             padding: 15px;
             width: 100%;
-        }
+        } */
 
         .sponsors-section {
             background: #f8f8f8;
@@ -241,6 +241,22 @@
             margin-bottom: 10px;
             text-align: center;
         }
+        /* Footer button styles */
+        .footer-button {
+            display: inline-block;
+            background-color: #28a745; /* Blue color */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px; /* Space between text and button */
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-button:hover {
+            background-color: #06bb4b; /* Darker blue on hover */
+        }
 
         .arrow {
             position: absolute;
@@ -253,12 +269,16 @@
             max-width: 100%;
             height: auto;
         }
-        .subrayado {
-            text-decoration: underline;
-            text-decoration-color: #d9534f;
-            text-decoration-style: solid;
-            text-decoration-thickness: 2px;
-            color: #d9534f;
+        /* Footer */
+        .footer {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
@@ -329,9 +349,9 @@
                 gap: 30px;
             }
 
-            .footer {
+            /* .footer {
                 padding: 10px;
-            }
+            } */
         }
 
         /* Estilos para dispositivos móviles */
@@ -432,16 +452,17 @@
     </nav>
 
     <div class="intro-section">
-        <h2>¡¡Cubano, no compres el generador incorrecto!!</h2>
+        <h2>¡¡No compres el generador incorrecto!!</h2>
         <p>
             Queremos ayudarte a encontrar la mejor solución para tus necesidades energéticas. 
             Responde unas sencillas preguntas y te ofreceremos un sistema adaptado a tu situación específica.
         </p>
     </div>
 
-    <div class="considerations-section" style="max-width: 800px; text-align: center; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        
-        <h2><a href="info.html" class="subrayado">¿Qué parámetros mirar al comprar Sistemas de Generación Eléctrica?</a></h2>
+    <div class="considerations-section" style="max-width: 800px; margin: 30px auto; text-align: center; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <h2>
+            <a href="info.html" style="text-decoration: none; color: #a20707;">¿Qué parámetros mirar al comprar equipos eléctricos?</a>
+        </h2>
     </div>
     
     
@@ -499,9 +520,8 @@
     </div>
 
     <div class="footer">
-        <p>© 2024 Espoleta Tecnologías. Todos los derechos reservados.</p>
+        <a href="emergency_solution.html" class="footer-button" style="padding-top: 10px;">Calcula tus necesidades!!</a>
     </div>
-
     <script>
         function navigateTo(option) {
             switch(option) {
