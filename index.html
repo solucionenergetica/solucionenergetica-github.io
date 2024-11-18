@@ -242,6 +242,33 @@
             text-align: center;
         }
 
+        .arrow {
+            position: absolute;
+            border: solid transparent; 
+            border-width: 10px;
+            border-bottom-color: #f00;  /* Change to your desired color */
+        }
+
+        .product-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
+
+        .bounce {
+            animation: bounce 1s infinite;
+        }
+
         /* Estilos responsive */
         @media (max-width: 768px) {
             .sponsors-section h3 {
@@ -404,16 +431,27 @@
             Responde unas sencillas preguntas y te ofreceremos un sistema adaptado a tu situación específica.
         </p>
     </div>
+
+    <div class="considerations-section" style="max-width: 800px; margin: 30px auto; text-align: center; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <h2>
+            <a href="info.html" style="text-decoration: none; color: #a20707;">¿Qué parámetros mirar al comprar equipos eléctricos?</a>
+        </h2>
+    </div>
+    
+    
+    
+    
     
     <div class="options-section">
         <p class="instruction-text">¡Haz clic en la siguiente opción para explorar soluciones personalizadas para apagones o desastres naturales!</p>
         <div class="option-card-container">
-            <div class="option-card" onclick="navigateTo('emergency')">
-                <h3>Emergencia por Apagones o Desastres Naturales</h3>
+            <div class="option-card bounce" onclick="navigateTo('emergency')">
+                <h3>Sistema para emergencia por Apagones o Desastres Naturales</h3>
                 <p>¿Sufres apagones frecuentes o te estás preparando para eventos como ciclones? Encuentra sistemas de respaldo fiables.</p>
             </div>
-         </div>
+        </div>
     </div>
+    
 
     <!-- Patrocinadores Section -->
     <div class="sponsors-section">
