@@ -145,6 +145,22 @@
         .red {
             color: red; /* Set text color to red */
         }
+        /* Footer button styles */
+        .footer-button {
+            display: inline-block;
+            background-color: #28a745; /* Blue color */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px; /* Space between text and button */
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-button:hover {
+            background-color: #06bb4b; /* Darker blue on hover */
+        }
     </style>
 </head>
 <body>
@@ -174,7 +190,8 @@
         </div>
     </main>
 
-    <div class="footer">© 2024 Espoleta Tecnologías. Todos los derechos reservados.</div>
-
+    <div class="footer">
+        <a href="emergency_solution.html" class="footer-button" style="padding-top: 10px;">Calcula tus necesidades!!</a>
+    </div>
 </body>
 </html>
