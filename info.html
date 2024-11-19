@@ -145,6 +145,22 @@
         .red {
             color: red; /* Set text color to red */
         }
+        .responsive-img {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+            object-fit: cover; /* Añadido */
+        }
+
+        /* Nuevas clases para imágenes optimizadas */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .lazy-loaded {
+            opacity: 1;
+        }
         /* Footer button styles */
         .footer-button {
             display: inline-block;
@@ -177,15 +193,15 @@
         <div class="section">
             <section id="parametros">
                 <h2>Parámetros Clave</h2>
-                <p>Si vas a comprar SOLO UN GENERADOR (de gasolina o de paneles solares, sin respaldo de baterías), lo importante es mirar la <span class= "blue">POTENCIA</span> (normalmente escrita en Watt, W o Vatios).</p>
-                <img src="gen1.png" alt="generador energético" class="responsive-img">
+                <p>Si vas a comprar SOLO UN GENERADOR (de gasolina o de paneles solares, sin respaldo de baterías), lo importante es mirar la <span class="blue">POTENCIA</span> (normalmente escrita en Watt, W o Vatios).</p>
+                <img src="gen1.png" alt="generador energético" class="responsive-img lazy-load" loading="lazy">
                 
                 <p>Si vas a comprar un SISTEMA CON RESPALDO DE BATERÍAS, es importante mirar dos cosas:</p>
                 <ol>
-                    <li><span class= "blue">La potencia</span> (en Watt o kW), que define el máximo de equipos que puede soportar el sistema conectado al mismo tiempo.</li>
-                    <li><span class= "red">La capacidad</span> (en Wh o kWh), que define la carga total que puede almacenar. Si conectas más equipos, se gastará más rápido; si conectas menos, te durará más.</li>
+                    <li><span class="blue">La potencia</span> (en Watt o kW), que define el máximo de equipos que puede soportar el sistema conectado al mismo tiempo.</li>
+                    <li><span class="red">La capacidad</span> (en Wh o kWh), que define la carga total que puede almacenar. Si conectas más equipos, se gastará más rápido; si conectas menos, te durará más.</li>
                 </ol>
-                <img src="gen2.png" alt="generador energético solar" class="responsive-img">
+                <img src="gen2.png" alt="generador energético solar" class="responsive-img lazy-load" loading="lazy">
             </section>
         </div>
     </main>
@@ -193,5 +209,36 @@
     <div class="footer">
         <a href="emergency_solution.html" class="footer-button" style="padding-top: 10px;">Calcula tus necesidades!!</a>
     </div>
+    <script>
+        // Carga diferida de imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = [].slice.call(document.querySelectorAll('img.lazy-load'));
+            
+            if ('IntersectionObserver' in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove('lazy-load');
+                            lazyImage.classList.add('lazy-loaded');
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback para navegadores antiguos
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove('lazy-load');
+                    lazyImage.classList.add('lazy-loaded');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
